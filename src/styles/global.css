@@ -4,6 +4,8 @@
   --headingColor: #2e2f42;
   --headingFontSize: 25px;
   --subheadingFonSize: 17px;
+  --basicWhite:#ffffff;
+  --fontWeightBold:500;
 }
 
 body {

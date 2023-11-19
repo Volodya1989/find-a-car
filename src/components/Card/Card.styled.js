@@ -22,23 +22,22 @@ export const CardSection = styled.div`
   margin-right: auto;
   width: 100%;
   text-align: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  background-color: #ffffff;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  background-color: var(--basicWhite);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   text-align: left;
   background-color: #f7f7f7;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 `;
 
-export const CardDescription = styled.p`
-  margin-bottom: 8px;
-  font-size: 22px;
+export const HorizontalLine = styled.div`
+  border-top: 1px solid lightgray;
 `;
+
 export const CardImage = styled.img`
-  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
