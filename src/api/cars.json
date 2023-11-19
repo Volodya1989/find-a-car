@@ -1,0 +1,76 @@
+[
+  {
+    "id": "1",
+    "brandName": "Honda",
+    "modelName": "Civic",
+    "Price": 22000
+  },
+  {
+    "id": "2",
+    "brandName": "Toyota",
+    "modelName": "Corolla",
+    "Price": 33000
+  },
+  {
+    "id": "3",
+    "brandName": "Honda",
+    "modelName": "Accord",
+    "Price": 14000
+  },
+  {
+    "id": "4",
+    "brandName": "Toyota",
+    "modelName": "Camry",
+    "Price": 43000,
+    "showBridge": true
+  },
+  {
+    "id": "5",
+    "brandName": "Honda",
+    "modelName": "CR-V",
+    "Price": 27000
+  },
+  {
+    "id": "6",
+    "brandName": "Honda",
+    "modelName": "CR-V",
+    "Price": 15000
+  },
+  {
+    "id": "7",
+    "brandName": "Toyota",
+    "modelName": "Avalon",
+    "Price": 43000
+  },
+  {
+    "id": "8",
+    "brandName": "Mercedes-Benz",
+    "modelName": "GLA",
+    "Price": 25000
+  },
+  {
+    "id": "9",
+    "brandName": "Mercedes-Benz",
+    "modelName": "AMG",
+    "Price": 37000,
+    "showBridge": true
+  },
+  {
+    "id": "10",
+    "brandName": "Mercedes-Benz",
+    "modelName": "GLB",
+    "Price": 1000
+  },
+  {
+    "id": "11",
+    "brandName": "GMC",
+    "modelName": "Terrain",
+    "Price": 4000
+  },
+  {
+    "id": "12",
+    "brandName": "GMC",
+    "modelName": "Canyon",
+    "Price": 23000
+  }
+]
