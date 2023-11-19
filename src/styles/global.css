@@ -1,9 +1,41 @@
+:root {
+  --shade: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --headingColor: #2e2f42;
+  --headingFontSize: 25px;
+  --subheadingFonSize: 17px;
+}
+
 body {
   font-family: Roboto;
   color: #141414;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
-  margin-top: none;
-  margin-bottom: none;
+  padding: 0;
+  margin: 0;
 }
 
+a {
+  display: block;
+  color: currentColor;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  font-size: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
