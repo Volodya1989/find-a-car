@@ -1,4 +1,4 @@
-import Main from 'Pages/Main/Main';
+import Home from 'Pages/Home/Home';
 export const App = () => {
   return (
     <div
@@ -11,7 +11,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <Main />
+      <Home />
     </div>
   );
 };

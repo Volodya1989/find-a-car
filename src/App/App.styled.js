@@ -1,13 +1,5 @@
-import styled from "@emotion/styled";
+import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: block;
-  text-align: center;
-  width: 700px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 30px;
-`;
 
 
 export const Shadow = styled.div`

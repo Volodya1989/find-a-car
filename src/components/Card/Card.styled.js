@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const CardWrapper = styled.li`
   box-shadow: var(--shade);
   border-radius: 6px;
-  width: 264px;
+  width: 300px;
+  height: 350px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -15,6 +16,14 @@ export const CardWrapper = styled.li`
     transform: scale(1.05);
     cursor: pointer;
   }
+  @media screen and (min-width: 768px) {
+    width: 264px;
+    height: 338px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 35px;
+    line-height: 1.06;
+  }
 `;
 
 export const CardSection = styled.div`
@@ -22,8 +31,6 @@ export const CardSection = styled.div`
   margin-right: auto;
   width: 100%;
   text-align: center;
-  padding-top: 22px;
-  padding-bottom: 22px;
   background-color: var(--basicWhite);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -31,6 +38,13 @@ export const CardSection = styled.div`
   background-color: #f7f7f7;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
 `;
 
 export const HorizontalLine = styled.div`
