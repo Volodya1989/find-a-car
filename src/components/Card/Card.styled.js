@@ -63,4 +63,11 @@ export const CardImage = styled.img`
   width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  height: 262px;
+  @media screen and (min-width: 768px) {
+    height: 169px;
+  }
+  @media screen and (min-width: 1100px) {
+    height: 133px;
+  }
 `;
