@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 export const CardWrapper = styled.li`
   box-shadow: var(--shade);
-  border-radius: 6px;
-  width: 300px;
-  height: 350px;
+  border-radius: 10px;
+  width: 350px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 10px;
+  margin-bottom: 35px;
   transition: transform 0.4s;
 
   &:hover {
@@ -17,12 +16,12 @@ export const CardWrapper = styled.li`
     cursor: pointer;
   }
   @media screen and (min-width: 768px) {
-    width: 264px;
-    height: 338px;
+    width: 225px;
+    height: 362px;
   }
-  @media screen and (min-width: 1200px) {
-    font-size: 35px;
-    line-height: 1.06;
+  @media screen and (min-width: 1100px) {
+    width: 175px;
+    height: 335px;
   }
 `;
 
@@ -47,6 +46,11 @@ export const CardSection = styled.div`
   }
 `;
 
+export const Description = styled.div`
+  @media screen and (min-width: 768px) {
+    height: 123px;
+  }
+`;
 export const HorizontalLine = styled.div`
   border-top: 1px solid lightgray;
 `;
@@ -55,7 +59,6 @@ export const CardImage = styled.img`
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  height: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 `;

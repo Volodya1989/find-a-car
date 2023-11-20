@@ -9,8 +9,8 @@ export const Title = styled.h5`
     font-size: 30px;
     line-height: 1.07;
   }
-  @media screen and (min-width: 1200px) {
-    font-size: 35px;
+  @media screen and (min-width: 1100px) {
+    font-size: 30px;
     line-height: 1.06;
   }
 `;

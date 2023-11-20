@@ -1,10 +1,10 @@
-import Card from 'components/Card';
+import CardsList from 'components/CardsList';
 import { Container } from './Home.styled';
 
-const Home = () => {
+const Home = ({ cars }) => {
   return (
     <Container>
-      <Card />
+      <CardsList cars={cars} />
     </Container>
   );
 };

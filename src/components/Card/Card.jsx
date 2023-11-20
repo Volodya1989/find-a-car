@@ -4,27 +4,26 @@ import Price from 'components/Price';
 import {
   CardWrapper,
   CardSection,
+  Description,
   HorizontalLine,
   CardImage,
 } from './Card.styled';
-const Card = () => {
+const Card = ({ brand, model, carPrice }) => {
   return (
-    <div>
-      <ul>
-        <CardWrapper>
-          <CardImage
-            src={require('../../images/s60_recharge.jpg')}
-            alt="Face of the Product Designer"
-          />
-          <CardSection>
-            <Heading>Honda</Heading>
-            <Subheading>Civic</Subheading>
-            <HorizontalLine />
-            <Price>$45,000</Price>
-          </CardSection>
-        </CardWrapper>
-      </ul>
-    </div>
+    <CardWrapper>
+      <CardImage
+        src={require('../../images/s60_recharge.jpg')}
+        alt="Face of the Product Designer"
+      />
+      <CardSection>
+        <Description>
+          <Heading>{brand}</Heading>
+          <Subheading>{model}</Subheading>
+        </Description>
+        <HorizontalLine />
+        <Price>${carPrice}</Price>
+      </CardSection>
+    </CardWrapper>
   );
 };
 export default Card;

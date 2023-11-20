@@ -12,7 +12,7 @@ export const PriceStyled = styled.p`
     font-size: 17px;
     line-height: 1.07;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1100px) {
     font-size: 20px;
     line-height: 1.06;
   }
