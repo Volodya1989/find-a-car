@@ -15,14 +15,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right top,
     #051937,
     #004d7a,
     #008793,
     #00bf72,
     #a8eb12
+  ); */
+  background: linear-gradient(
+    90deg,
+    rgba(5, 32, 108, 1) 0%,
+    rgba(21, 21, 173, 1) 9%,
+    rgba(17, 202, 240, 1) 95%
   );
+
   background-attachment: fixed;
 }
 

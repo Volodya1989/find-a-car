@@ -18,6 +18,8 @@ export const CardWrapper = styled.li`
   @media screen and (min-width: 768px) {
     width: 225px;
     height: 362px;
+    margin-left: 0;
+    margin-right: 0;
   }
   @media screen and (min-width: 1100px) {
     width: 175px;
