@@ -12,6 +12,8 @@ export const Overlay = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1200;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: scroll;
 `;
 
 export const ModalStyled = styled.div`
@@ -36,11 +38,11 @@ export const CloseBtn = styled.button`
   color: white;
   font-size: 30px;
   font-weight: 700;
-
   background-color: transparent;
 
   &:hover,
   &:focus {
     color: white;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;

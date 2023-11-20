@@ -57,6 +57,10 @@ export const HorizontalLine = styled.div`
   border-top: 1px solid lightgray;
 `;
 
+export const Button = styled.button`
+  cursor: pointer;
+`;
+
 export const CardImage = styled.img`
   margin-left: auto;
   margin-right: auto;
