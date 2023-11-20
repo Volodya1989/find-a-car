@@ -9,10 +9,11 @@ import {
   HorizontalLine,
   CardImage,
 } from './Card.styled';
-const Card = ({ showBridge, brand, model, carPrice, onClick, activeImg }) => {
+const Card = ({ showBridge, brand, model, carPrice, onClick }) => {
   return (
-    <CardWrapper onClick={e => onClick(e, showBridge)}>
+    <CardWrapper>
       <CardImage
+        onClick={e => onClick(e, showBridge)}
         //Images that were provided, showed error 404 (https://goo.gl/W6XXEx , https://goo.gl/zg4adq ,
         // https://goo.gl/NbNN0F). So, needed to take something else.
         src={

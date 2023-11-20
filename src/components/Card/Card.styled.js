@@ -13,7 +13,7 @@ export const CardWrapper = styled.li`
   &:hover {
     transition: transform 0.4s;
     transform: scale(1.05);
-    cursor: pointer;
+    // cursor: pointer;
   }
   @media screen and (min-width: 768px) {
     width: 225px;
@@ -64,6 +64,9 @@ export const CardImage = styled.img`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 262px;
+  &:hover {
+    cursor: pointer;
+  }
   @media screen and (min-width: 768px) {
     height: 169px;
   }
