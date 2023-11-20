@@ -1,10 +1,10 @@
 import CardsList from 'components/CardsList';
 import { Container } from './Home.styled';
 
-const Home = ({ cars }) => {
+const Home = ({ cars, onClick }) => {
   return (
     <Container>
-      <CardsList cars={cars} />
+      <CardsList cars={cars} onClick={onClick} />
     </Container>
   );
 };
