@@ -1,7 +1,6 @@
 import Card from 'components/Card/Card';
 import { List } from './CardsList.styled';
-const CardsList = ({ cars }) => {
-  console.log('cars', cars);
+const CardsList = ({cars, onClick}) => {
   return (
     <List>
       {cars.map(({ showBridge = false, id, heading, subheading, price }) => {
@@ -12,6 +11,8 @@ const CardsList = ({ cars }) => {
             model={subheading}
             carPrice={price}
             showBridge={showBridge}
+            onClick={onClick}
+            activeImg={showBridge}
           />
         );
       })}
