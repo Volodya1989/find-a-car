@@ -9,12 +9,22 @@ import {
   HorizontalLine,
   CardImage,
 } from './Card.styled';
-const Card = ({ brand, model, carPrice }) => {
+const Card = ({ showBridge, brand, model, carPrice }) => {
+  console.log(showBridge);
   return (
     <CardWrapper>
       <CardImage
-        src={require('../../images/s60_recharge.jpg')}
-        alt="Face of the Product Designer"
+        //Images that were provided, showed error 404 (https://goo.gl/W6XXEx , https://goo.gl/zg4adq ,
+        // https://goo.gl/NbNN0F). So, needed to take something else.
+        src={
+          showBridge
+            ? require('../../images/bridge.jpg')
+            : require('../../images/placeholderCar.jpg')
+        }
+        onError={e =>
+          (e.target.src = require('../../images/placeholderCar.jpg'))
+        }
+        alt={`${brand} ${model}`}
       />
       <CardSection>
         <Description>
