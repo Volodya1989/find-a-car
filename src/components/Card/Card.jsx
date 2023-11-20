@@ -1,6 +1,7 @@
 import Heading from 'components/Heading';
 import Subheading from 'components/Subheading';
 import Price from 'components/Price';
+import { addComma } from 'utils';
 import {
   CardWrapper,
   CardSection,
@@ -21,7 +22,7 @@ const Card = ({ brand, model, carPrice }) => {
           <Subheading>{model}</Subheading>
         </Description>
         <HorizontalLine />
-        <Price>${carPrice}</Price>
+        <Price>${addComma(carPrice)}</Price>
       </CardSection>
     </CardWrapper>
   );
