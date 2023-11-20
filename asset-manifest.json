@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-trip-app/static/css/main.3b0cbd2d.css",
-    "main.js": "/react-trip-app/static/js/main.507ac429.js",
+    "main.js": "/react-trip-app/static/js/main.5c0d98d3.js",
     "static/media/placeholderCar.jpg": "/react-trip-app/static/media/placeholderCar.63a18c2a659dac97a562.jpg",
     "static/media/bridge.jpg": "/react-trip-app/static/media/bridge.b01c7c7dacda943e498b.jpg",
     "index.html": "/react-trip-app/index.html",
     "main.3b0cbd2d.css.map": "/react-trip-app/static/css/main.3b0cbd2d.css.map",
-    "main.507ac429.js.map": "/react-trip-app/static/js/main.507ac429.js.map"
+    "main.5c0d98d3.js.map": "/react-trip-app/static/js/main.5c0d98d3.js.map"
   },
   "entrypoints": [
     "static/css/main.3b0cbd2d.css",
-    "static/js/main.507ac429.js"
+    "static/js/main.5c0d98d3.js"
   ]
 }
