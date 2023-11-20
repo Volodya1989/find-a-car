@@ -34,7 +34,7 @@ const Card = ({ showBridge, brand, model, carPrice, onClick, description }) => {
         <Button
           onClick={e => onClick(e, { showBridge, description, brand, model })}
         >
-          Learn More...
+          Read More...
         </Button>
         <HorizontalLine />
         <Price>${addComma(carPrice)}</Price>
