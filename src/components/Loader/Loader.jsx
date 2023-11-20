@@ -8,7 +8,8 @@ const Loader = () => {
         height="100"
         width="100"
         color="#63d1f2"
-        wrapperStyle={{}}
+        margin="auto"
+        wrapperStyle={{ margin: '25%' }}
         wrapperClass=""
         visible={true}
         ariaLabel="three-circles-rotating"
