@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
+  body {
+  }
   display: block;
   text-align: center;
   width: 100%;

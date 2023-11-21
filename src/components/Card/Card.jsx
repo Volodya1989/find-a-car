@@ -32,6 +32,7 @@ const Card = ({ showBridge, brand, model, carPrice, onClick, description }) => {
           <Subheading>{model}</Subheading>
         </Description>
         <Button
+          type="button"
           onClick={e => onClick(e, { showBridge, description, brand, model })}
         >
           Read More...

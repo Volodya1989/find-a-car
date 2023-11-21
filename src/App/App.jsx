@@ -3,7 +3,7 @@ import Home from 'Pages/Home/Home';
 import { useState, useEffect } from 'react';
 import useFetch from 'use-http';
 import ModalDetails from 'components/ModalDetails';
-import { Wrapper } from './App.styled';
+import { Wrapper, GlobalStyle } from './App.styled';
 import Loader from 'components/Loader';
 import Modal from 'components/Modal';
 
@@ -54,6 +54,7 @@ export const App = () => {
 
   return (
     <Wrapper>
+      <GlobalStyle isShowModal={isShowModal} />
       {!isLoading ? (
         <Loader />
       ) : (
