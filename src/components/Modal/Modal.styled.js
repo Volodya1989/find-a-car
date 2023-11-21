@@ -10,10 +10,11 @@ export const Overlay = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9998;
-  opacity: 1;
+  z-index: 10110;
+  opacity: ${({ isShowModal }) => (isShowModal ? '0' : '1')};
   transition: opacity var(--transition-time-and-cubic);
   overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 export const ModalStyled = styled.div`
@@ -36,10 +37,9 @@ export const CloseBtn = styled.button`
   font-size: 30px;
   font-weight: 700;
   background-color: transparent;
-
   &:hover,
   &:focus {
-    color: white;
+    color: #48a7f0;
     transition: var(--transition-time-and-cubic);
   }
 `;
