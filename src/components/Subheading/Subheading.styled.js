@@ -4,7 +4,7 @@ export const Description = styled.p`
   font-size: var(--subheadingFonSize);
   line-height: 1.18;
   margin-top: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 
   @media screen and (min-width: 768px) {
     font-size: 22px;
