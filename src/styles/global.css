@@ -54,7 +54,9 @@ ul {
 }
 .pagination > li {
   cursor: pointer;
-  padding: 15px;
+}
+.pagination > li > a {
+  width: 40px;
 }
 
 .pagination > li.active > a {
