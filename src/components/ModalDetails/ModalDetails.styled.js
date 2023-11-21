@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ModalImgStyled = styled.img`
+export const ModalDetailsStyled = styled.img`
   positon: relative;
 `;
 

@@ -13,7 +13,6 @@ export const CardWrapper = styled.li`
   &:hover {
     transition: transform 0.4s;
     transform: scale(1.05);
-    // cursor: pointer;
   }
   @media screen and (min-width: 768px) {
     width: 225px;
@@ -50,7 +49,7 @@ export const CardSection = styled.div`
 
 export const Description = styled.div`
   @media screen and (min-width: 768px) {
-    height: 123px;
+    height: 93px;
   }
 `;
 export const HorizontalLine = styled.div`
@@ -58,7 +57,47 @@ export const HorizontalLine = styled.div`
 `;
 
 export const Button = styled.button`
+  background: linear-gradient(to bottom right, #009ffd, #2a2a72);
+  border: 0;
+  display: block;
+  border-radius: 12px;
+  color: #ffffff;
   cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: -apple-system, system-ui, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 10px;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  transition: transform background 0.6s ease-in-out;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  &:not([disabled]):focus {
+    background: linear-gradient(
+      to right top,
+      #0dcbec,
+      #00aefd,
+      #008dff,
+      #0063ff,
+      #2612eb
+    );
+    transition: transform background 0.6s ease-in-out;
+  }
+  &:not([disabled]):hover {
+    transition: transform 0.6s ease-in-out;
+    transform: background;
+    background: linear-gradient(
+      to right top,
+      #0dcbec,
+      #00aefd,
+      #008dff,
+      #0063ff,
+      #2612eb
+    );
+  }
 `;
 
 export const CardImage = styled.img`

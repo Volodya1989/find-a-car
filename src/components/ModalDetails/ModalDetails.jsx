@@ -1,9 +1,14 @@
-import { ModalImgStyled, Description, Text, Heading } from './ModalDetails.styled';
+import {
+  ModalDetailsStyled,
+  Description,
+  Text,
+  Heading,
+} from './ModalDetails.styled';
 export const ModalDetails = ({ details }) => {
   const { showBridge, description, brand, model } = details;
   return (
     <>
-      <ModalImgStyled
+      <ModalDetailsStyled
         src={
           showBridge
             ? require('../../images/bridge.jpg')
