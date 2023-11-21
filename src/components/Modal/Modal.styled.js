@@ -7,12 +7,12 @@ export const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  margin-bottom: 2%;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1200;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9998;
+  opacity: 1;
+  transition: opacity var(--transition-time-and-cubic);
   overflow-y: scroll;
 `;
 
@@ -20,9 +20,6 @@ export const ModalStyled = styled.div`
   position: relative;
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
-`;
-export const ModalImg = styled.img`
-  positon: relative;
 `;
 
 export const CloseBtn = styled.button`
@@ -43,6 +40,6 @@ export const CloseBtn = styled.button`
   &:hover,
   &:focus {
     color: white;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-time-and-cubic);
   }
 `;

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Overlay, ModalStyled, CloseBtn, ModalImg } from './Modal.styled';
+import { Overlay, ModalStyled, CloseBtn } from './Modal.styled';
 const modalRootEl = document.querySelector('#modal-root');
 
 const Modal = ({ onClose, children }) => {
