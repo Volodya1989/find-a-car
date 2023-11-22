@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-trip-app/static/css/main.cdb9754e.css",
-    "main.js": "/react-trip-app/static/js/main.8074a64a.js",
-    "static/media/placeholderCar.jpg": "/react-trip-app/static/media/placeholderCar.63a18c2a659dac97a562.jpg",
-    "static/media/bridge.jpg": "/react-trip-app/static/media/bridge.b01c7c7dacda943e498b.jpg",
-    "index.html": "/react-trip-app/index.html",
-    "main.cdb9754e.css.map": "/react-trip-app/static/css/main.cdb9754e.css.map",
-    "main.8074a64a.js.map": "/react-trip-app/static/js/main.8074a64a.js.map"
+    "main.css": "/find-a-car/static/css/main.cdb9754e.css",
+    "main.js": "/find-a-car/static/js/main.9d314e06.js",
+    "static/media/placeholderCar.jpg": "/find-a-car/static/media/placeholderCar.63a18c2a659dac97a562.jpg",
+    "static/media/bridge.jpg": "/find-a-car/static/media/bridge.b01c7c7dacda943e498b.jpg",
+    "index.html": "/find-a-car/index.html",
+    "main.cdb9754e.css.map": "/find-a-car/static/css/main.cdb9754e.css.map",
+    "main.9d314e06.js.map": "/find-a-car/static/js/main.9d314e06.js.map"
   },
   "entrypoints": [
     "static/css/main.cdb9754e.css",
-    "static/js/main.8074a64a.js"
+    "static/js/main.9d314e06.js"
   ]
 }
