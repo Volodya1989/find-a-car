@@ -32,6 +32,12 @@ export const FilterIcon = styled.img.attrs({
   height: 18px;
   fill: blue;
 `;
+export const ToolkitWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items;center;
+  margin-right: auto;
+`;
 
 export const FilterButton = styled.button`
   width: 40px;

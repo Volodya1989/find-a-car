@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import CardsList from 'components/CardsList';
 import SortingRadios from 'components/SortingRadios';
-import { Container } from './Home.styled';
+import { Container, ToolkitWrapper } from './Home.styled';
 import SettingsButton from 'components/SettingsButton';
-
+import Search from 'components/Search';
 const Home = ({
   cars,
   onClick,
@@ -27,20 +27,21 @@ const Home = ({
   const onSettingsClick = () => {
     sortingToggle();
   };
- 
+
   return (
     <Container>
-      <SettingsButton onSettingsClick={onSettingsClick} />
-
-      <SortingRadios
-        onSortingCars={onSortingCars}
-        onResetSorting={onResetSorting}
-        setSortedCars={setSortedCars}
-        cars={cars}
-        isShowSorting={isShowSorting}
-        onCloseSortingBar={onCloseSortingBar}
-      />
-
+      <ToolkitWrapper>
+        <Search />
+        <SettingsButton onSettingsClick={onSettingsClick} />
+        <SortingRadios
+          onSortingCars={onSortingCars}
+          onResetSorting={onResetSorting}
+          setSortedCars={setSortedCars}
+          cars={cars}
+          isShowSorting={isShowSorting}
+          onCloseSortingBar={onCloseSortingBar}
+        />
+      </ToolkitWrapper>
       <CardsList
         cars={cars}
         onClick={onClick}
