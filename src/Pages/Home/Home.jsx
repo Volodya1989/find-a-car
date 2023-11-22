@@ -21,9 +21,13 @@ const Home = ({
     setIsShowSorting(prevIsShowModal => !prevIsShowModal);
   };
 
+  const onCloseSortingBar = value => {
+    setIsShowSorting(value);
+  };
   const onSettingsClick = () => {
     sortingToggle();
   };
+ 
   return (
     <Container>
       <SettingsButton onSettingsClick={onSettingsClick} />
@@ -34,6 +38,7 @@ const Home = ({
         setSortedCars={setSortedCars}
         cars={cars}
         isShowSorting={isShowSorting}
+        onCloseSortingBar={onCloseSortingBar}
       />
 
       <CardsList
