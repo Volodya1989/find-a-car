@@ -7,6 +7,7 @@ import { Wrapper, GlobalStyle } from './App.styled';
 import Loader from 'components/Loader';
 import Modal from 'components/Modal';
 import { onSortingCars } from 'utils';
+import { onResetSorting } from 'utils';
 
 export const App = () => {
   const [cars, setCars] = useState(null);
@@ -71,13 +72,12 @@ export const App = () => {
   // };
 
   //reseting what was sorted
-  const onResetSorting = resetSorting => {
-    if (!cars) return;
-
-    setSortedCars(cars);
-    console.log('RESETED', sortedCars);
-    return;
-  };
+  // const onResetSorting = () => {
+  //   if (!cars) return;
+  //   setSortedCars(cars);
+  //   console.log('RESETED', sortedCars);
+  //   return;
+  // };
 
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;

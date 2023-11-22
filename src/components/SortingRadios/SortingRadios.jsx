@@ -49,11 +49,8 @@ const SortingRadios = ({
     if (!helperText) return;
     if (helperText === 'Sorting Reseted') return;
     setValue('');
-    onResetSorting(helperText);
+    onResetSorting(cars, setSortedCars);
     setHelperText('Sorting Reseted');
-    // setTimeout(() => {
-    //   setHelperText('Reseting Completed');
-    // }, '500');
   };
 
   return (
