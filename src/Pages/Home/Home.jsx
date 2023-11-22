@@ -1,4 +1,5 @@
 import CardsList from 'components/CardsList';
+import SortingRadios from 'components/SortingRadios';
 import { Container } from './Home.styled';
 
 const Home = ({
@@ -11,13 +12,14 @@ const Home = ({
 }) => {
   return (
     <Container>
+      <SortingRadios />
       <CardsList
         cars={cars}
         onClick={onClick}
         subset={subset}
         onPageChange={onPageChange}
         pageCount={pageCount}
-        forcePage={Math.ceil(forcePage)}
+        forcePage={forcePage}
       />
     </Container>
   );
