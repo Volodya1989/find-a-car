@@ -9,11 +9,16 @@ import Button from '@mui/material/Button';
 import { Wrapper } from './SortingRadios.styled';
 // import { Avatar } from '@mui/material';
 
-const SortingRadios = () => {
+const SortingRadios = ({
+  onSortingCars,
+  onResetSorting,
+  setSortedCars,
+  cars,
+}) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
 
-  const [helperText, setHelperText] = useState('');
+  const [helperText, setHelperText] = useState('   ');
 
   const handleRadioChange = event => {
     setValue(event.target.value);
@@ -22,7 +27,7 @@ const SortingRadios = () => {
   };
   const handleSubmit = event => {
     event.preventDefault();
-
+    onSortingCars(value, cars, setSortedCars);
     if (value === 'Brand Name') {
       setHelperText('Sorted By Brand');
       setError(false);
@@ -42,12 +47,13 @@ const SortingRadios = () => {
   const handleReset = event => {
     event.preventDefault();
     if (!helperText) return;
+    if (helperText === 'Sorting Reseted') return;
     setValue('');
+    onResetSorting(helperText);
     setHelperText('Sorting Reseted');
-
     // setTimeout(() => {
-    //   setHelperText('');
-    // }, '1000');
+    //   setHelperText('Reseting Completed');
+    // }, '500');
   };
 
   return (

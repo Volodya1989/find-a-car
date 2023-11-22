@@ -9,10 +9,18 @@ const Home = ({
   onPageChange,
   pageCount,
   forcePage,
+  onSortingCars,
+  onResetSorting,
+  setSortedCars,
 }) => {
   return (
     <Container>
-      <SortingRadios />
+      <SortingRadios
+        onSortingCars={onSortingCars}
+        onResetSorting={onResetSorting}
+        setSortedCars={setSortedCars}
+        cars={cars}
+      />
       <CardsList
         cars={cars}
         onClick={onClick}
