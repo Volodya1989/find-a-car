@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const CardWrapper = styled.li`
   box-shadow: var(--shade);
   border-radius: 10px;

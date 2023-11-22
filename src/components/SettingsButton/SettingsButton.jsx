@@ -28,7 +28,7 @@ const SettingsButton = ({ onSettingsClick }) => {
         style={{
           display: 'flex',
           marginLeft: 'auto',
-          marginBottom: '40px',
+          marginBottom: '30px',
           borderRadius: '50%',
           minWidth: '50px',
           minHeight: '50px',
