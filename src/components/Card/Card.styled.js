@@ -21,7 +21,7 @@ export const CardWrapper = styled.li`
     margin-right: 0;
   }
   @media screen and (min-width: 1100px) {
-    width: 175px;
+    width: 201px;
     height: 335px;
   }
 `;

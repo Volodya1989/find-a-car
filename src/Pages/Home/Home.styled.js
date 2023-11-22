@@ -18,7 +18,7 @@ export const Container = styled.section`
     line-height: 1.07;
   }
   @media screen and (min-width: 1100px) {
-    width: 1000px;
+    width: 1200px;
 
     font-size: 35px;
     line-height: 1.06;
