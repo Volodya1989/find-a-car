@@ -10,7 +10,7 @@ export const Shadow = styled.div`
 `;
 export const Wrapper = styled.div`
   height: 100vh;
-  margin-top: 10%;
+  margin-top: 5%;
 `;
 
 export const GlobalStyle = createGlobalStyle`
