@@ -7,7 +7,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import { Wrapper } from './SortingRadios.styled';
-import { Avatar } from '@mui/material';
+// import { Avatar } from '@mui/material';
 
 const SortingRadios = () => {
   const [value, setValue] = useState('');
