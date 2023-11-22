@@ -1,8 +1,8 @@
 {
-  "name": "react-trip-app",
+  "name": "find-a-car",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://volodya1989.github.io/react-trip-app/",
+  "homepage": "https://volodya1989.github.io/find-a-car/",
   "dependencies": {
     "@mui/material": "^5.14.18",
     "@testing-library/jest-dom": "^5.16.3",

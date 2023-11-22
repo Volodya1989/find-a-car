@@ -1,6 +1,6 @@
-import Heading from 'components/Heading';
-import Subheading from 'components/Subheading';
-import Price from 'components/Price';
+import Heading from 'components/Card/Heading';
+import Subheading from 'components/Card/Subheading';
+import Price from 'components/Card/Price';
 import { addComma } from 'utils';
 import {
   CardWrapper,

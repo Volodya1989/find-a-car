@@ -11,11 +11,11 @@ export const ModalDetails = ({ details }) => {
       <ModalDetailsStyled
         src={
           showBridge
-            ? require('../../images/bridge.jpg')
-            : require('../../images/placeholderCar.jpg')
+            ? require('../../../images/bridge.jpg')
+            : require('../../../images/placeholderCar.jpg')
         }
         onError={e =>
-          (e.target.src = require('../../images/placeholderCar.jpg'))
+          (e.target.src = require('../../../images/placeholderCar.jpg'))
         }
         alt="large image"
         width="600"
