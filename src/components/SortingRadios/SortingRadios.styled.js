@@ -2,12 +2,18 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   position: absolute;
-  top: 20%;
+  top: calc(4%+10px);
   right: 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s linear;
   z-index: 2;
+  @media screen and (min-width: 768px) {
+    top: 12%;
+  }
+  @media screen and (min-width: 1100px) {
+    top: 20%;
+  }
 
   ${({ visible }) =>
     (visible === 'true' || '') &&
@@ -23,7 +29,14 @@ export const InnerWrapper = styled.div`
   max-height: 100%;
   box-sizing: border-box;
   border-radius: 10px;
-  background: #fff;
+  background: linear-gradient(
+    to right top,
+    #0dcbec,
+    #00aefd,
+    #008dff,
+    #0063ff,
+    #2612eb
+  );
   padding: 28px 20px 45px;
   box-shadow: 1px 1px 12px 2px rgb(154 154 154 / 37%);
   overflow: auto;

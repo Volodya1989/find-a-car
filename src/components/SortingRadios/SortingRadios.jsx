@@ -69,6 +69,9 @@ const SortingRadios = ({
                 color: '#141414',
               }}
               id="demo-error-radios"
+              style={{
+                color: '#141414',
+              }}
             >
               Sort by
             </FormLabel>

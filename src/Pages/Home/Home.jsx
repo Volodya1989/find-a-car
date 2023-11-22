@@ -22,7 +22,6 @@ const Home = ({
   };
 
   const onSettingsClick = () => {
-    console.log('isShowSorting', isShowSorting);
     sortingToggle();
   };
   return (
