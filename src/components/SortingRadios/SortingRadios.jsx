@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
+import usePrevious from 'hooks/usePrevious';
+import useOnClickOutside from 'hooks/useOnClickOutside';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -14,11 +16,24 @@ const SortingRadios = ({
   setSortedCars,
   cars,
   isShowSorting,
+  onCloseSortingBar,
 }) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
-
   const [helperText, setHelperText] = useState('');
+  const previousVisibility = usePrevious(isShowSorting);
+
+  const innerWrapperRef = useRef();
+
+  const onEscKeyPress = useCallback(
+    e => {
+      if (e.key !== 'Escape') return;
+
+      onCloseSortingBar(false);
+      window.removeEventListener('keydown', onEscKeyPress);
+    },
+    [onCloseSortingBar]
+  );
 
   const handleRadioChange = event => {
     setValue(event.target.value);
@@ -53,9 +68,22 @@ const SortingRadios = ({
     setHelperText('Sorting Reseted');
   };
 
+  useOnClickOutside(
+    innerWrapperRef,
+    () => isShowSorting && setTimeout(() => onCloseSortingBar(false), 201)
+  );
+
+  useEffect(() => {
+    if (!previousVisibility && isShowSorting)
+      window.addEventListener('keydown', onEscKeyPress);
+
+    // eslint-disable-next-line
+  }, [isShowSorting]);
+
   return (
     <Wrapper visible={isShowSorting.toString() === 'true' ? 'true' : 'false'}>
       <InnerWrapper
+        ref={innerWrapperRef}
         visible={isShowSorting.toString() === 'true' ? 'true' : 'false'}
       >
         <form onSubmit={handleSubmit}>
