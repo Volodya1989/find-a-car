@@ -12,7 +12,6 @@ import { Wrapper } from './SortingRadios.styled';
 const SortingRadios = () => {
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
-  const [isReset, setIsReset] = useState(false);
 
   const [helperText, setHelperText] = useState('');
 
@@ -27,28 +26,24 @@ const SortingRadios = () => {
     if (value === 'Brand Name') {
       setHelperText('Sorted By Brand');
       setError(false);
-      setIsReset(true);
     } else if (value === 'Model Name') {
       setHelperText('Sorted By Model');
       setError(false);
-      setIsReset(true);
     } else if (value === 'Price Amount') {
       setHelperText('Sorted By Price');
       setError(false);
-      setIsReset(true);
     } else {
       setHelperText('Please try again.');
       setError(true);
-      setIsReset(true);
     }
     setValue(event.target.value);
   };
 
   const handleReset = event => {
     event.preventDefault();
+    if (!helperText) return;
     setValue('');
     setHelperText('Sorting Reseted');
-    setIsReset(false);
 
     // setTimeout(() => {
     //   setHelperText('');
@@ -164,7 +159,7 @@ const SortingRadios = () => {
             }}
             type="submit"
             variant="contained"
-            disabled={!isReset}
+            disabled={!helperText}
           >
             <img
               src={require('../../icons/reset.png')}
