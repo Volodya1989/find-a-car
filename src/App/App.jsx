@@ -2,7 +2,7 @@ import carsAPI from '../api/cars.json';
 import Home from 'Pages/Home/Home';
 import { useState, useEffect } from 'react';
 import useFetch from 'use-http';
-import ModalDetails from 'components/ModalDetails';
+import ModalDetails from 'components/Modal/ModalDetails';
 import { Wrapper, GlobalStyle } from './App.styled';
 import Loader from 'components/Loader';
 import Modal from 'components/Modal';
