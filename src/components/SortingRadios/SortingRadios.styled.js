@@ -1,16 +1,41 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-display:flex;
-flex-direction:row:
-// flex-wrap:nowrap;
-align-items:center;
-  // width: 100%;
-  // position: sticky;
-  // top: 79px;
-  // padding: 30px 0;
-  // margin-bottom: 50px;
-  // z-index: 2;
+export const Wrapper = styled.section`
+  position: absolute;
+  top: 20%;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s linear;
+  z-index: 2;
+
+  ${({ visible }) =>
+    (visible === 'true' || '') &&
+    `
+    opacity: 1;
+    visibility: visible;
+  `}
+`;
+
+export const InnerWrapper = styled.div`
+  width: 250px;
+  min-height: 200px;
+  max-height: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #fff;
+  padding: 28px 20px 45px;
+  box-shadow: 1px 1px 12px 2px rgb(154 154 154 / 37%);
+  overflow: auto;
+  transform: translateX(25px);
+  transition: all 0.2s linear;
+  position: relative;
+
+  ${({ visible }) =>
+    (visible === 'true' || '') &&
+    `
+    transform: translateX(0);
+  `}
 `;
 
 export const ResetButton = styled.button`
@@ -37,42 +62,4 @@ export const SearchWrapper = styled.div`
   flex: 1;
   max-width: 500px;
   margin-right: auto;
-`;
-
-export const FilterIcon = styled.img.attrs({
-  src: './icons/filter.svg',
-})`
-  width: auto;
-  height: 18px;
-  fill: blue;
-`;
-
-export const FilterButton = styled.button`
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 0;
-  cursor: pointer;
-  padding: 0;
-  margin-left: 25px;
-
-  &:hover {
-    opacity: 0.85;
-  }
-
-  ${({ active }) =>
-    (active || '') &&
-    `
-    opacity: 0.85;
-  `}
-
-  ${({ disabled }) =>
-    (disabled || '') &&
-    `
-    pointer-events: none;
-    opacity: 0.85;
-  `}
 `;
