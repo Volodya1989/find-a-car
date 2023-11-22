@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
+  position: relative;
   body {
   }
   display: block;
@@ -22,4 +23,42 @@ export const Container = styled.section`
     font-size: 35px;
     line-height: 1.06;
   }
+`;
+
+export const FilterIcon = styled.img.attrs({
+  src: './icons/filter.svg',
+})`
+  width: auto;
+  height: 18px;
+  fill: blue;
+`;
+
+export const FilterButton = styled.button`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 25px;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  ${({ active }) =>
+    (active || '') &&
+    `
+    opacity: 0.85;
+  `}
+
+  ${({ disabled }) =>
+    (disabled || '') &&
+    `
+    pointer-events: none;
+    opacity: 0.85;
+  `}
 `;
