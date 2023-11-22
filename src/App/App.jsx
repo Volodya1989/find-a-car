@@ -46,44 +46,12 @@ export const App = () => {
   const toggleModal = () => {
     setIsShowModal(prevIsShowModal => !prevIsShowModal);
   };
-  //sorting methods
-  // const onSortingCars = value => {
-  //   if (!cars) return;
-
-  //   if (value === 'Brand Name') {
-  //     const inAlphabeticalBrandOrder = [...cars]?.sort((firstCar, secondCar) =>
-  //       firstCar.heading.localeCompare(secondCar.heading)
-  //     );
-  //     setSortedCars(inAlphabeticalBrandOrder);
-  //     return;
-  //   } else if (value === 'Model Name') {
-  //     const inAlphabeticalModelOrder = [...cars]?.sort((firstCar, secondCar) =>
-  //       firstCar.subheading.localeCompare(secondCar.subheading)
-  //     );
-  //     setSortedCars(inAlphabeticalModelOrder);
-  //     return;
-  //   } else if (value === 'Price Amount') {
-  //     const inAscendingPriceOrder = [...cars]?.sort(
-  //       (firstCar, secondCar) => firstCar.price - secondCar.price
-  //     );
-  //     setSortedCars(inAscendingPriceOrder);
-  //     return;
-  //   }
-  // };
-
-  //reseting what was sorted
-  // const onResetSorting = () => {
-  //   if (!cars) return;
-  //   setSortedCars(cars);
-  //   console.log('RESETED', sortedCars);
-  //   return;
-  // };
 
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const subset = sortedCars?.slice(startIndex, endIndex);
 
-  const onClick = (e, showBridge) => {
+  const onClick = (_, showBridge) => {
     setActiveImg(showBridge);
 
     toggleModal();
