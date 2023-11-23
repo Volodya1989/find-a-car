@@ -9,7 +9,7 @@ export const Wrapper = styled.section`
 export const Label = styled.label`
   font-size: 22px;
   font-weight: 300;
-  color: black;
+  color: white;
   position: absolute;
   left: 0;
   top: 50%;
@@ -18,7 +18,7 @@ export const Label = styled.label`
 `;
 export const SearchWrapper = styled.div`
   flex: 1;
-  max-width: 300px;
+  max-width: 400px;
   @media screen and (min-width: 768px) {
     margin-right: auto;
     width: 400;
@@ -28,32 +28,18 @@ export const SearchWrapper = styled.div`
 export const Field = styled.input`
   display: flex;
   border: 0;
-  // box-shadow: var(--shade);
   font-size: 22px;
-  color: linear-gradient(
-    to right top,
-    #0dcbec,
-    #00aefd,
-    #008dff,
-    #0063ff,
-    #2612eb
-  );
   background-color: transparent;
   padding: 10px 15px;
   border-bottom: 2px solid #d5f5f4;
   outline: none;
   width: 200px;
+
   @media screen and (min-width: 768px) {
     width: 350px;
   }
   @media screen and (min-width: 1100px) {
     width: 450px;
-  }
-  ::placeholder {
-    color: white;
-  }
-  :-ms-input-placeholder {
-    color: white;
   }
 
   ${({ disabled }) =>
@@ -69,7 +55,7 @@ export const Field = styled.input`
   &:focus ~ ${Label} {
     transform: translateY(-50px);
     scale: 0.9;
-    color: white;
+    color: #9ca5b5;
   }
 
   ${({ value = '' }) =>
@@ -77,6 +63,7 @@ export const Field = styled.input`
     `
     & ~ ${Label} {
       transform: translateY(-50px);
+
     }
   `}
 `;
