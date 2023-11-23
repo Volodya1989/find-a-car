@@ -5,6 +5,9 @@ export const List = styled.ul`
   justify-content: start;
   flex-wrap: wrap;
   gap: 30px 15px;
+  @media screen and (min-width: 768px) {
+    gap: 30px 30px;
+  }
   @media screen and (min-width: 1100px) {
     gap: 30px 33px;
   }

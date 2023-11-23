@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   position: absolute;
-  top: calc(4%+10px);
+  top: 4%;
   right: 0;
   opacity: 0;
   visibility: hidden;
