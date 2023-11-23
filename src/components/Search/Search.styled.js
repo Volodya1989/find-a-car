@@ -34,7 +34,7 @@ export const Field = styled.input`
   border-bottom: 2px solid #d5f5f4;
   outline: none;
   width: 200px;
-
+  color: white;
   @media screen and (min-width: 768px) {
     width: 350px;
   }

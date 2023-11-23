@@ -17,6 +17,8 @@ const SortingRadios = ({
   cars,
   isShowSorting,
   onCloseSortingBar,
+  sortedCars,
+  setQuerySearch,
 }) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
@@ -42,7 +44,7 @@ const SortingRadios = ({
   };
   const handleSubmit = event => {
     event.preventDefault();
-    onSortingCars(value, cars, setSortedCars);
+    onSortingCars(value, sortedCars, setSortedCars);
     if (value === 'Brand Name') {
       setHelperText('Sorted By Brand');
       setError(false);
@@ -64,6 +66,7 @@ const SortingRadios = ({
     if (!helperText) return;
     if (helperText === 'Sorting Reseted') return;
     setValue('');
+    setQuerySearch('');
     onResetSorting(cars, setSortedCars);
     setHelperText('Sorting Reseted');
   };

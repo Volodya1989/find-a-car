@@ -4,6 +4,7 @@ import SortingRadios from 'components/SortingRadios';
 import { Container, ToolkitWrapper } from './Home.styled';
 import SettingsButton from 'components/SettingsButton';
 import Search from 'components/Search';
+import NoCars from 'components/NoCars';
 const Home = ({
   cars,
   onClick,
@@ -14,6 +15,10 @@ const Home = ({
   onSortingCars,
   onResetSorting,
   setSortedCars,
+  onQueryChange,
+  query,
+  sortedCars,
+  setQuerySearch,
 }) => {
   const [isShowSorting, setIsShowSorting] = useState(false);
 
@@ -31,7 +36,7 @@ const Home = ({
   return (
     <Container>
       <ToolkitWrapper>
-        <Search />
+        <Search onQueryChange={onQueryChange} query={query} />
         <SettingsButton onSettingsClick={onSettingsClick} />
         <SortingRadios
           onSortingCars={onSortingCars}
@@ -40,16 +45,22 @@ const Home = ({
           cars={cars}
           isShowSorting={isShowSorting}
           onCloseSortingBar={onCloseSortingBar}
+          sortedCars={sortedCars}
+          setQuerySearch={setQuerySearch}
         />
       </ToolkitWrapper>
-      <CardsList
-        cars={cars}
-        onClick={onClick}
-        subset={subset}
-        onPageChange={onPageChange}
-        pageCount={pageCount}
-        forcePage={forcePage}
-      />
+      {sortedCars.length ? (
+        <CardsList
+          cars={cars}
+          onClick={onClick}
+          subset={subset}
+          onPageChange={onPageChange}
+          pageCount={pageCount}
+          forcePage={forcePage}
+        />
+      ) : (
+        <NoCars />
+      )}
     </Container>
   );
 };
