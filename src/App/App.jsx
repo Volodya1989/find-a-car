@@ -6,11 +6,9 @@ import ModalDetails from 'components/Modal/ModalDetails';
 import { Wrapper, GlobalStyle } from './App.styled';
 import Loader from 'components/Loader';
 import Modal from 'components/Modal';
-import {
-  onSortingCars,
-  onResetSorting,
-  // useLocalStorage,
-} from 'utils';
+import { onSortingCars, onResetSorting } from 'utils';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   const [cars, setCars] = useState(null);
@@ -26,7 +24,10 @@ export const App = () => {
   const [query, setQuerySearch] = useState('');
 
   const onQueryChange = e => {
-    if (e.currentTarget.value === ' ') return;
+    if (e.currentTarget.value === ' ') {
+      toast.error('Empty string is not valid query.');
+      return;
+    }
     setQuerySearch(e.currentTarget.value);
   };
   const itemsPerPage = 5;
@@ -97,6 +98,7 @@ export const App = () => {
 
   return (
     <Wrapper>
+      <ToastContainer />
       <GlobalStyle isShowModal={isShowModal} />
       {!isLoading ? (
         <Loader />
