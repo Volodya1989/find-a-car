@@ -35,7 +35,7 @@ const SettingsButton = ({ onSettingsClick }) => {
           '&:hover': {
             background: '#edeff0',
           },
-          '@media screen and (min-width: 768px)': {
+          '@media screen and (minWidth: 768px)': {
             marginLeft: 'auto',
           },
         }}
