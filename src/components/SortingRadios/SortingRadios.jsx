@@ -9,6 +9,8 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import { Wrapper, InnerWrapper } from './SortingRadios.styled';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SortingRadios = ({
   onSortingCars,
@@ -47,15 +49,23 @@ const SortingRadios = ({
     onSortingCars(value, sortedCars, setSortedCars);
     if (value === 'Brand Name') {
       setHelperText('Sorted By Brand');
+      toast.success('Cars are sorted by Brands.');
+
       setError(false);
     } else if (value === 'Model Name') {
       setHelperText('Sorted By Model');
+      toast.success('Cars are sorted by Model.');
+
       setError(false);
     } else if (value === 'Price Amount') {
       setHelperText('Sorted By Price');
+      toast.success('Cars are sorted by Price.');
+
       setError(false);
     } else {
       setHelperText('Please try again.');
+      toast.error('Error. Please try again.');
+
       setError(true);
     }
     setValue(event.target.value);
@@ -69,6 +79,7 @@ const SortingRadios = ({
     setQuerySearch('');
     onResetSorting(cars, setSortedCars);
     setHelperText('Sorting Reseted');
+    toast.success('Sorting options were reseted.');
   };
 
   useOnClickOutside(
