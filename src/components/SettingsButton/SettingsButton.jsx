@@ -27,7 +27,6 @@ const SettingsButton = ({ onSettingsClick }) => {
         }}
         style={{
           display: 'flex',
-          marginLeft: 'auto',
           marginBottom: '30px',
           borderRadius: '50%',
           minWidth: '50px',
@@ -35,6 +34,9 @@ const SettingsButton = ({ onSettingsClick }) => {
           padding: '10px',
           '&:hover': {
             background: '#edeff0',
+          },
+          '@media screen and (min-width: 768px)': {
+            marginLeft: 'auto',
           },
         }}
         type="button"

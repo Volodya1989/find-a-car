@@ -19,8 +19,8 @@ export const Label = styled.label`
 export const SearchWrapper = styled.div`
   flex: 1;
   max-width: 300px;
-  margin-right: auto;
   @media screen and (min-width: 768px) {
+    margin-right: auto;
     width: 400;
   }
 `;
