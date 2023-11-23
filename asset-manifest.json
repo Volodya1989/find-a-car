@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/find-a-car/static/css/main.cdb9754e.css",
-    "main.js": "/find-a-car/static/js/main.73cda50b.js",
+    "main.js": "/find-a-car/static/js/main.db425535.js",
     "static/media/placeholderCar.jpg": "/find-a-car/static/media/placeholderCar.63a18c2a659dac97a562.jpg",
     "static/media/bridge.jpg": "/find-a-car/static/media/bridge.b01c7c7dacda943e498b.jpg",
     "index.html": "/find-a-car/index.html",
     "main.cdb9754e.css.map": "/find-a-car/static/css/main.cdb9754e.css.map",
-    "main.73cda50b.js.map": "/find-a-car/static/js/main.73cda50b.js.map"
+    "main.db425535.js.map": "/find-a-car/static/js/main.db425535.js.map"
   },
   "entrypoints": [
     "static/css/main.cdb9754e.css",
-    "static/js/main.73cda50b.js"
+    "static/js/main.db425535.js"
   ]
 }
