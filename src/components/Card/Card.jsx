@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import Heading from 'components/Card/Heading';
 import Subheading from 'components/Card/Subheading';
 import Price from 'components/Card/Price';
+import Tooltip from '@mui/material/Tooltip';
+
 import { addComma } from 'utils';
 import {
   CardWrapper,
@@ -36,20 +38,22 @@ const Card = ({
 
   return (
     <CardWrapper>
-      {/* <div id={id} favorites={favorites}> */}
-      <IconWrapper onClick={onFavoriteChange}>
-        <HeartImg
-          src={
-            isFavorite
-              ? require('../../images/heart_active.png')
-              : require('../../images/heart_normal.png')
-          }
-          onError={e =>
-            (e.target.src = require('../../images/heart_normal.png'))
-          }
-          alt="Heart"
-        />
-      </IconWrapper>
+      <Tooltip title="Favorites" placement="top">
+        <IconWrapper onClick={onFavoriteChange}>
+          <HeartImg
+            src={
+              isFavorite
+                ? require('../../images/heart_active.png')
+                : require('../../images/heart_normal.png')
+            }
+            onError={e =>
+              (e.target.src = require('../../images/heart_normal.png'))
+            }
+            alt="Heart"
+          />
+        </IconWrapper>
+      </Tooltip>
+
       <CardImage
         //Images that were provided, showed error 404 (https://goo.gl/W6XXEx , https://goo.gl/zg4adq ,
         // https://goo.gl/NbNN0F). So, needed to take something else.
@@ -63,7 +67,6 @@ const Card = ({
         }
         alt={`${brand} ${model}`}
       />
-
       <CardSection>
         <Description>
           <Heading>{brand}</Heading>
