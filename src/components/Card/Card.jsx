@@ -4,7 +4,7 @@ import Subheading from 'components/Card/Subheading';
 import Price from 'components/Card/Price';
 import Tooltip from '@mui/material/Tooltip';
 
-import { addComma } from 'utils';
+import { addComma, useLocalStorage } from 'utils';
 import {
   CardWrapper,
   CardSection,
@@ -26,9 +26,10 @@ const Card = ({
   favorites,
 }) => {
   const [isFavorite, setIsFavorite] = useState(favorites);
-  const [localCars, setLocalCars] = useState(() => {
-    return JSON.parse(localStorage.getItem('cars')) ?? [];
-  });
+  // const [localCars, setLocalCars] = useState(() => {
+  //   return JSON.parse(localStorage.getItem('cars')) ?? [];
+  // });
+  const [localCars, setLocalCars] = useLocalStorage('cars' ?? []);
 
   useEffect(() => {
     setIsFavorite(favorites);
@@ -48,7 +49,8 @@ const Card = ({
     });
 
     console.log('newObj', modifiedEmployees);
-    localStorage.setItem('cars', JSON.stringify(modifiedEmployees));
+    // localStorage.setItem('cars', JSON.stringify(modifiedEmployees));
+    setLocalCars(modifiedEmployees);
   };
 
   return (
