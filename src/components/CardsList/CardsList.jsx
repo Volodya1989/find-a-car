@@ -21,6 +21,7 @@ const CardsList = ({
             subheading,
             price,
             description,
+            favorites,
           }) => {
             return (
               <Card
@@ -32,6 +33,8 @@ const CardsList = ({
                 onClick={onClick}
                 activeImg={showBridge}
                 description={description}
+                id={id}
+                favorites={favorites}
               />
             );
           }
@@ -58,5 +61,3 @@ const CardsList = ({
   );
 };
 export default CardsList;
-
-

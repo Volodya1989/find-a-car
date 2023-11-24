@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Heading from 'components/Card/Heading';
 import Subheading from 'components/Card/Subheading';
 import Price from 'components/Card/Price';
@@ -9,10 +10,46 @@ import {
   HorizontalLine,
   CardImage,
   Button,
+  HeartImg,
+  IconWrapper,
 } from './Card.styled';
-const Card = ({ showBridge, brand, model, carPrice, onClick, description }) => {
+const Card = ({
+  showBridge,
+  brand,
+  model,
+  carPrice,
+  onClick,
+  description,
+  id,
+  favorites,
+}) => {
+  const [isFavorite, setIsFavorite] = useState(null);
+
+  useEffect(() => {
+    setIsFavorite(favorites);
+    // eslint-disable-next-line
+  }, []);
+
+  const onFavoriteChange = () => {
+    setIsFavorite(prevIsShowModal => !prevIsShowModal);
+  };
+
   return (
     <CardWrapper>
+      {/* <div id={id} favorites={favorites}> */}
+      <IconWrapper onClick={onFavoriteChange}>
+        <HeartImg
+          src={
+            isFavorite
+              ? require('../../images/heart_active.png')
+              : require('../../images/heart_normal.png')
+          }
+          onError={e =>
+            (e.target.src = require('../../images/heart_normal.png'))
+          }
+          alt="Heart"
+        />
+      </IconWrapper>
       <CardImage
         //Images that were provided, showed error 404 (https://goo.gl/W6XXEx , https://goo.gl/zg4adq ,
         // https://goo.gl/NbNN0F). So, needed to take something else.
@@ -26,6 +63,7 @@ const Card = ({ showBridge, brand, model, carPrice, onClick, description }) => {
         }
         alt={`${brand} ${model}`}
       />
+
       <CardSection>
         <Description>
           <Heading>{brand}</Heading>
