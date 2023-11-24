@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 const SettingsButton = ({ onSettingsClick }) => {
   return (
     <>
-      <Tooltip title="Order By" placement="left-end">
+      <Tooltip title="Sort By" placement="left-end">
         <Button
           sx={{
             '&.MuiButton-root:hover': {
