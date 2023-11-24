@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-
 export const CardWrapper = styled.li`
+  position: relative;
   box-shadow: var(--shade);
   border-radius: 10px;
   width: 350px;
@@ -114,4 +114,28 @@ export const CardImage = styled.img`
   @media screen and (min-width: 1100px) {
     height: 133px;
   }
+`;
+
+export const HeartImg = styled.img`
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-top: 8px;
+  // width: 50%;
+  display: block;
+  margin: 0 auto;
+  // width: 50%;
+`;
+
+export const IconWrapper = styled.div`
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  padding: 4px;
+  right: 4%;
+  top: 2%;
+  background-color: lightgray;
+  border-radius: 50%;
+  opacity: 0.9;
 `;
