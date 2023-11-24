@@ -139,4 +139,14 @@ export const IconWrapper = styled.div`
   border-radius: 50%;
   opacity: 0.9;
   cursor: pointer;
+  &:hover {
+    background: linear-gradient(
+      to right top,
+      #0dcbec,
+      #00aefd,
+      #008dff,
+      #0063ff,
+      #2612eb
+    );
+  }
 `;
