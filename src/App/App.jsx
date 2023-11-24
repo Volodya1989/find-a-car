@@ -7,7 +7,7 @@ import { Wrapper, GlobalStyle } from './App.styled';
 import Loader from 'components/Loader';
 import Modal from 'components/Modal';
 import { onSortingCars, onResetSorting, useLocalStorage } from 'utils';
-
+import { ToastContainer } from 'react-toastify';
 export const App = () => {
   // eslint-disable-next-line
   const { loading, error, jobs } = useFetch();
@@ -95,6 +95,7 @@ export const App = () => {
   return (
     <Wrapper>
       <GlobalStyle isShowModal={isShowModal} />
+      <ToastContainer />;
       {!isLoading ? (
         <Loader />
       ) : (

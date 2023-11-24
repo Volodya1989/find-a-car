@@ -25,7 +25,10 @@ const Card = ({
   id,
   favorites,
 }) => {
-  const [isFavorite, setIsFavorite] = useState(null);
+  const [isFavorite, setIsFavorite] = useState(favorites);
+  const [localCars, setLocalCars] = useState(() => {
+    return JSON.parse(localStorage.getItem('cars')) ?? [];
+  });
 
   useEffect(() => {
     setIsFavorite(favorites);
@@ -34,12 +37,24 @@ const Card = ({
 
   const onFavoriteChange = () => {
     setIsFavorite(prevIsShowModal => !prevIsShowModal);
+
+    console.log('isFavorite', !isFavorite);
+
+    const modifiedEmployees = localCars.map(obj => {
+      if (obj.id === id) {
+        return { ...obj, favorites: !isFavorite };
+      }
+      return obj;
+    });
+
+    console.log('newObj', modifiedEmployees);
+    localStorage.setItem('cars', JSON.stringify(modifiedEmployees));
   };
 
   return (
     <CardWrapper>
       <Tooltip title="Favorites" placement="top">
-        <IconWrapper onClick={onFavoriteChange}>
+        <IconWrapper onClick={e => onFavoriteChange(e)}>
           <HeartImg
             src={
               isFavorite
