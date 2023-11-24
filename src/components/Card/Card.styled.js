@@ -138,4 +138,5 @@ export const IconWrapper = styled.div`
   background-color: lightgray;
   border-radius: 50%;
   opacity: 0.9;
+  cursor: pointer;
 `;

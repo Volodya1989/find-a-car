@@ -36,7 +36,6 @@ const Card = ({
 
   return (
     <CardWrapper>
-      {/* <div id={id} favorites={favorites}> */}
       <IconWrapper onClick={onFavoriteChange}>
         <HeartImg
           src={
