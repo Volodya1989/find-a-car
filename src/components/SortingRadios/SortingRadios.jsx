@@ -9,6 +9,8 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import { Wrapper, InnerWrapper } from './SortingRadios.styled';
+import Tooltip from '@mui/material/Tooltip';
+
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -187,36 +189,38 @@ const SortingRadios = ({
             >
               Submit
             </Button>
-            <Button
-              onClick={handleReset}
-              sx={{
-                mt: 1,
-                mr: 1,
-                borderRadius: '50%',
-                width: '20px',
-                height: '20px',
-                backgroundColor: '#edeff0',
-                top: '0',
-                left: '100%',
-              }}
-              style={{
-                borderRadius: '50%',
-                minWidth: '30px',
-                minHeight: '30px',
-                padding: '5px',
-                position: 'absolute',
-              }}
-              type="submit"
-              variant="contained"
-              disabled={!helperText}
-            >
-              <img
-                src={require('../../icons/reset.png')}
-                alt="reset button"
-                width="40px"
-                height="40px"
-              />
-            </Button>
+            <Tooltip title="Reset" placement="top">
+              <Button
+                onClick={handleReset}
+                sx={{
+                  mt: 1,
+                  mr: 1,
+                  borderRadius: '50%',
+                  width: '20px',
+                  height: '20px',
+                  backgroundColor: '#edeff0',
+                  top: '0',
+                  left: '100%',
+                }}
+                style={{
+                  borderRadius: '50%',
+                  minWidth: '30px',
+                  minHeight: '30px',
+                  padding: '5px',
+                  position: 'absolute',
+                }}
+                type="submit"
+                variant="contained"
+                disabled={!helperText}
+              >
+                <img
+                  src={require('../../icons/reset.png')}
+                  alt="reset button"
+                  width="40px"
+                  height="40px"
+                />
+              </Button>
+            </Tooltip>
           </FormControl>
         </form>
       </InnerWrapper>
