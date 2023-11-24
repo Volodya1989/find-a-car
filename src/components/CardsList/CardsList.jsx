@@ -1,8 +1,6 @@
 import Card from 'components/Card/Card';
 import { List } from './CardsList.styled';
 import ReactPaginate from 'react-paginate';
-import { useLocalStorage } from 'utils';
-import { useState, useEffect } from 'react';
 
 const CardsList = ({
   cars,
