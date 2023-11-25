@@ -95,7 +95,7 @@ export const App = () => {
   return (
     <Wrapper>
       <GlobalStyle isShowModal={isShowModal} />
-      <ToastContainer />;
+      <ToastContainer autoClose={2000} position="top-right" />;
       {!isLoading ? (
         <Loader />
       ) : (

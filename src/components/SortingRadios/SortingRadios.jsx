@@ -46,22 +46,28 @@ const SortingRadios = ({
     setHelperText(' ');
     setError(false);
   };
+  const toastSuccess = (message, type) => {
+    toast.success(message, {
+      className: 'toast-message',
+    });
+  };
   const handleSubmit = event => {
     event.preventDefault();
     onSortingCars(value, sortedCars, setSortedCars);
     if (value === 'Brand Name') {
       setHelperText('Sorted By Brand');
-      toast.success('Cars are sorted by Brands.');
+      // toast.success('Cars are sorted by Brands.');
+      toastSuccess('Cars are sorted by Brands.');
 
       setError(false);
     } else if (value === 'Model Name') {
       setHelperText('Sorted By Model');
-      toast.success('Cars are sorted by Model.');
+      toastSuccess('Cars are sorted by Model.');
 
       setError(false);
     } else if (value === 'Price Amount') {
       setHelperText('Sorted By Price');
-      toast.success('Cars are sorted by Price.');
+      toastSuccess('Cars are sorted by Price.');
 
       setError(false);
     } else {
@@ -81,7 +87,7 @@ const SortingRadios = ({
     setQuerySearch('');
     onResetSorting(cars, setSortedCars);
     setHelperText('Sorting Reseted');
-    toast.success('Sorting options were reseted.');
+    toastSuccess('Sorting options were reseted.');
   };
 
   useOnClickOutside(
