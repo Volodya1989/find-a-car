@@ -76,3 +76,5 @@ export const SearchWrapper = styled.div`
   max-width: 500px;
   margin-right: auto;
 `;
+
+export const ResetButtonWrapper = styled.div``;

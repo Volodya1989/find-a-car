@@ -1,6 +1,38 @@
 import styled from 'styled-components';
+import { ToastContainer } from 'react-toastify';
+import { createGlobalStyle } from 'styled-components';
 
-export const Container = styled.section`
+export const StyledToastContainer = styled(ToastContainer).attrs({
+  className: '.toast-message',
+  toastClassName: 'toast',
+  bodyClassName: 'body',
+  progressClassName: 'progress',
+})`
+  .toast-message {
+    background-color: darkblue;
+    color: #fff;
+    font-size: 20px;
+  }
+`;
+export const Shadow = styled.div`
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 10px;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #fffcff, #d5fefd);
+  margin-top: 50px;
+`;
+export const Wrapper = styled.div`
+  height: 100vh;
+  margin-top: 3%;
+`;
+
+export const GlobalStyle = createGlobalStyle`
+body{
+  overflow-y: ${({ isShowModal }) => (isShowModal ? 'hidden' : 'scroll')};
+}
+`;
+
+export const MainSection = styled.section`
   position: relative;
   body {
   }

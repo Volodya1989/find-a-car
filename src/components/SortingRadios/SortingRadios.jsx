@@ -8,7 +8,10 @@ import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
-import { Wrapper, InnerWrapper } from './SortingRadios.styled';
+import {
+  Wrapper,
+  InnerWrapper,
+} from './SortingRadios.styled';
 import Tooltip from '@mui/material/Tooltip';
 
 import { toast } from 'react-toastify';
@@ -56,7 +59,6 @@ const SortingRadios = ({
     onSortingCars(value, sortedCars, setSortedCars);
     if (value === 'Brand Name') {
       setHelperText('Sorted By Brand');
-      // toast.success('Cars are sorted by Brands.');
       toastSuccess('Cars are sorted by Brands.');
 
       setError(false);

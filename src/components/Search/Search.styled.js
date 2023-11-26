@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
 export const Label = styled.label`
   font-size: 22px;
   font-weight: 300;
+  width: 200px;
   color: white;
   position: absolute;
   left: 0;
@@ -38,9 +39,9 @@ export const Field = styled.input`
   @media screen and (min-width: 768px) {
     width: 350px;
   }
-  @media screen and (min-width: 1100px) {
-    width: 450px;
-  }
+  // @media screen and (min-width: 1100px) {
+  //   width: 450px;
+  // }
 
   ${({ disabled }) =>
     (disabled || '') &&
