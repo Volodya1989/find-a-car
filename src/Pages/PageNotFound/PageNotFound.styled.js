@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
     font-size: 30px;
     line-height: 1.07;
   }
-  @media screen and (min-width: 1100px) {
+  @media screen and (min-width: 1150px) {
     width: 1100px;
 
     font-size: 35px;
