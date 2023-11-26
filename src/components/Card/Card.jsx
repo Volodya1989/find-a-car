@@ -26,9 +26,7 @@ const Card = ({
   favorites,
 }) => {
   const [isFavorite, setIsFavorite] = useState(favorites);
-  // const [localCars, setLocalCars] = useState(() => {
-  //   return JSON.parse(localStorage.getItem('cars')) ?? [];
-  // });
+
   const [localCars, setLocalCars] = useLocalStorage('cars' ?? []);
 
   useEffect(() => {
@@ -39,8 +37,6 @@ const Card = ({
   const onFavoriteChange = () => {
     setIsFavorite(prevIsShowModal => !prevIsShowModal);
 
-    console.log('isFavorite', !isFavorite);
-
     const modifiedEmployees = localCars.map(obj => {
       if (obj.id === id) {
         return { ...obj, favorites: !isFavorite };
@@ -48,8 +44,6 @@ const Card = ({
       return obj;
     });
 
-    console.log('newObj', modifiedEmployees);
-    // localStorage.setItem('cars', JSON.stringify(modifiedEmployees));
     setLocalCars(modifiedEmployees);
   };
 
