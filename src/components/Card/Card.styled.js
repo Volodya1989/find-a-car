@@ -21,7 +21,7 @@ export const CardWrapper = styled.li`
     margin-left: 0;
     margin-right: 0;
   }
-  @media screen and (min-width: 1100px) {
+  @media screen and (min-width: 1150px) {
     width: 187px;
     height: 335px;
   }
@@ -111,7 +111,7 @@ export const CardImage = styled.img`
   @media screen and (min-width: 768px) {
     height: 169px;
   }
-  @media screen and (min-width: 1100px) {
+  @media screen and (min-width: 1150px) {
     height: 133px;
   }
 `;
