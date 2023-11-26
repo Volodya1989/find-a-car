@@ -4,17 +4,12 @@ import { NavLink } from 'react-router-dom';
 export const StyledLink = styled(NavLink)`
   color: #fff;
   text-decoration: none;
-  text-align: left;
   font-weight: 700;
-  width: 100%;
+  // width: 100%;
 
   &:hover {
     color: lightgray;
   }
-
-  // margin-right: auto;
-  // margin-left: auto;
-  // padding: 30px;
 
   @media screen and (min-width: 768px) {
     font-size: 25px;

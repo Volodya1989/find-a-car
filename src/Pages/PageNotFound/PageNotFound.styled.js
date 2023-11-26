@@ -28,13 +28,13 @@ export const Wrapper = styled.div`
   padding: 30px;
 
   @media screen and (min-width: 768px) {
-    width: 800px;
+    width: 700px;
 
     font-size: 30px;
     line-height: 1.07;
   }
   @media screen and (min-width: 1100px) {
-    width: 1200px;
+    width: 1100px;
 
     font-size: 35px;
     line-height: 1.06;

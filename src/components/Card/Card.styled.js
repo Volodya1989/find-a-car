@@ -16,13 +16,13 @@ export const CardWrapper = styled.li`
     transform: scale(1.05);
   }
   @media screen and (min-width: 768px) {
-    width: 225px;
+    width: 200px;
     height: 362px;
     margin-left: 0;
     margin-right: 0;
   }
   @media screen and (min-width: 1100px) {
-    width: 201px;
+    width: 187px;
     height: 335px;
   }
 `;

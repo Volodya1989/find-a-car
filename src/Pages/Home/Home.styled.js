@@ -41,16 +41,19 @@ export const MainSection = styled.section`
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding: 30px;
 
+  @media screen and (min-device-width: 350px) {
+    width: 350px;
+  }
   @media screen and (min-width: 768px) {
-    width: 800px;
+    width: 700px;
+    padding: 30px;
 
     font-size: 30px;
     line-height: 1.07;
   }
   @media screen and (min-width: 1100px) {
-    width: 1200px;
+    width: 1100px;
 
     font-size: 35px;
     line-height: 1.06;

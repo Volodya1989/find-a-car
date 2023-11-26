@@ -6,10 +6,10 @@ export const List = styled.ul`
   flex-wrap: wrap;
   gap: 30px 15px;
   @media screen and (min-width: 768px) {
-    gap: 30px 30px;
+    gap: 30px 20px;
   }
   @media screen and (min-width: 1100px) {
-    gap: 30px 33px;
+    gap: 30px 25px;
   }
 `;
 
