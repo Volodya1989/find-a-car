@@ -21,7 +21,7 @@ const Home = () => {
   const { loading, error, jobs } = useFetch();
   const [cars, setCars] = useLocalStorage('cars', null);
   const [sortedCars, setSortedCars] = useState(null);
-  const [activeImg, setActiveImg] = useState(null);
+  const [modalProps, setModalProps] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isShowModal, setIsShowModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
@@ -36,6 +36,7 @@ const Home = () => {
     setQuerySearch(e.currentTarget.value);
   };
 
+  //declaring amount of cards displayed per page for pagination
   const itemsPerPage = 5;
 
   useEffect(() => {
@@ -46,25 +47,30 @@ const Home = () => {
       setCars(carsAPI);
       setSortedCars(carsAPI);
     }
-
+    //using it to mock API calls by delaying response and making spinner to be displayed
     if (!loading) {
       setTimeout(() => {
         setIsLoading(true);
 
         if (!sortedCars?.length) return;
+        //setting up total amount of pages for pagination
         setTotalPages(Math.ceil(sortedCars?.length / itemsPerPage));
       }, 1000);
     }
   }, [loading, sortedCars, cars, setCars]);
 
   useEffect(() => {
+    //filtering based on Heading
     const filteredCarsByHeading = cars?.filter(car =>
       car.heading.toLowerCase().includes(query?.toLocaleLowerCase())
     );
+
+    //filtering based on Subheading
     const filteredCarsBySubheading = cars?.filter(car =>
       car.subheading.toLowerCase().includes(query?.toLocaleLowerCase())
     );
 
+    //combining two filters into one
     const searchResult = [
       ...(filteredCarsByHeading ?? []),
       ...(filteredCarsBySubheading ?? []),
@@ -75,40 +81,46 @@ const Home = () => {
 
       return;
     }
-    let uniqArray = [];
 
+    //making sure all cards are uniqe after two filters were merged
+    let uniqArray = [];
     function uniqObjects(data, key) {
       return (uniqArray = [...new Map(data.map(x => [key(x), x])).values()]);
     }
     uniqObjects(searchResult, car => car.id);
     setSortedCars(uniqArray);
   }, [query, cars]);
-
+  //setting up current page
   const handlePageChange = selectedPage => {
     setCurrentPage(selectedPage.selected);
   };
 
+  // using this toggle to update state of the Modal window based on previous state
   const toggleModal = () => {
     setIsShowModal(prevIsShowModal => !prevIsShowModal);
   };
 
+  //variables that are used for pagination
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const subset = sortedCars?.slice(startIndex, endIndex);
 
-  const onClick = (_, showBridge) => {
-    setActiveImg(showBridge);
-
+  //setting info that is displayed in Modal and passed as props
+  const onClick = (_, showModalInfo) => {
+    setModalProps(showModalInfo);
     toggleModal();
   };
 
+  //toggle used to display or hide sorting options
   const sortingToggle = () => {
     setIsShowSorting(prevIsShowModal => !prevIsShowModal);
   };
 
+  //closing sorting options using close button
   const onCloseSortingBar = value => {
     setIsShowSorting(value);
   };
+  //opening Sorting options by clicking on SETTINGS icon
   const onSettingsClick = () => {
     sortingToggle();
   };
@@ -155,7 +167,7 @@ const Home = () => {
       )}
       {isShowModal && (
         <Modal onClose={toggleModal}>
-          <ModalDetails details={activeImg} />
+          <ModalDetails details={modalProps} />
         </Modal>
       )}
     </Wrapper>
