@@ -30,6 +30,10 @@ Below you can see new design for Desktop, Tablet and Mobile.
 
 ![ProductListDesktop](./docs/Notifications.png)
 
+### 404 Page Handling
+
+![ProductListDesktop](./docs/404Page.png)
+
 The data required to render the design is under `src/api/cars.json` folder. The
 data looks like this:
 

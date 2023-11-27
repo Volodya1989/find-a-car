@@ -23,7 +23,10 @@ export const Shadow = styled.div`
 `;
 export const Wrapper = styled.div`
   height: 100vh;
-  margin-top: 3%;
+  margin-top: 10%;
+  @media screen and (min-width: 768px) {
+    margin-top: 3%;
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`

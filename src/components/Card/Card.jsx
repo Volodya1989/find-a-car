@@ -3,8 +3,8 @@ import Heading from 'components/Card/Heading';
 import Subheading from 'components/Card/Subheading';
 import Price from 'components/Card/Price';
 import Tooltip from '@mui/material/Tooltip';
-
-import { addComma, useLocalStorage } from 'utils';
+import useLocalStorage from 'hooks/useLocalStorage';
+import { addComma } from 'utils';
 import {
   CardWrapper,
   CardSection,

@@ -11,7 +11,8 @@ import ModalDetails from 'components/Modal/ModalDetails';
 import { Wrapper, GlobalStyle, StyledToastContainer } from './Home.styled';
 import Loader from 'components/Loader';
 import Modal from 'components/Modal';
-import { onSortingCars, onResetSorting, useLocalStorage } from 'utils';
+import useLocalStorage from 'hooks/useLocalStorage';
+import { onSortingCars, onResetSorting } from 'utils';
 import { ToastContainer } from 'react-toastify';
 
 const Home = () => {
