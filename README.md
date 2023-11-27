@@ -58,14 +58,14 @@ data looks like this:
 - Page should be responsive, demonstrating change in layout between at least two
   breakpoints.
 
-## Extra Requirements:
+## Extra Points:
 
 - Ability to sort based off Heading, Subheading, or Price.
 - Limit Cards to one row while preserving number of columns, then add pagination
   to see other results.
 - Feature to search based on Heading or Subheading
 - Modal window to get more specific information about the car
-- Ability to mark car as favorite by clicking on the image
+- Ability to add/romeve car to favorites by clicking on the heart image
 - Notifications added as well
 
 ## Technology:

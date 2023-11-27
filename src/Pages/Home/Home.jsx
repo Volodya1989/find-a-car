@@ -28,6 +28,7 @@ const Home = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [query, setQuerySearch] = useState('');
 
+  //setting query state on change and passing it as props to search component
   const onQueryChange = e => {
     if (e.currentTarget.value === ' ') {
       return;
