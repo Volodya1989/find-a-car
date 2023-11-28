@@ -90,6 +90,11 @@ const Home = () => {
     uniqObjects(searchResult, car => car.id);
     setSortedCars(uniqArray);
   }, [query, cars]);
+
+  //scrolling to the TOP of the page when navigating to another page using pagination
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
   //setting up current page
   const handlePageChange = selectedPage => {
     setCurrentPage(selectedPage.selected);
