@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import CardsList from 'components/CardsList';
 import SortingRadios from 'components/SortingRadios';
 import { MainSection, ToolkitWrapper } from './Home.styled';
@@ -17,8 +17,7 @@ import { ToastContainer } from 'react-toastify';
 
 const Home = () => {
   const [isShowSorting, setIsShowSorting] = useState(false);
-  // eslint-disable-next-line
-  const { loading, error, jobs } = useFetch();
+  const { loading } = useFetch();
   const [cars, setCars] = useLocalStorage('cars', null);
   const [sortedCars, setSortedCars] = useState(null);
   const [modalProps, setModalProps] = useState(null);
@@ -29,81 +28,97 @@ const Home = () => {
   const [query, setQuerySearch] = useState('');
 
   //setting query state on change and passing it as props to search component
-  const onQueryChange = e => {
-    if (e.currentTarget.value === ' ') {
-      return;
-    }
-    setQuerySearch(e.currentTarget.value);
-  };
+  const onQueryChange = useCallback(
+    e => {
+      if (e.currentTarget.value === ' ') {
+        return;
+      }
+      setQuerySearch(e.currentTarget.value);
+    },
+    [setQuerySearch]
+  );
 
   //declaring amount of cards displayed per page for pagination
   const itemsPerPage = 5;
 
-  useEffect(() => {
-    if (loading) {
-      setIsLoading(false);
-    }
-    if (!cars) {
-      setCars(carsAPI);
-      setSortedCars(carsAPI);
-    }
-    //using it to mock API calls by delaying response and making spinner to be displayed
-    if (!loading) {
-      setTimeout(() => {
-        setIsLoading(true);
+  const handleLoading = useCallback(
+    e => {
+      if (loading) {
+        setIsLoading(false);
+      }
+      if (!cars) {
+        setCars(carsAPI);
+        setSortedCars(carsAPI);
+      }
+      if (!loading) {
+        setTimeout(() => {
+          setIsLoading(true);
+          if (!sortedCars?.length) return;
+          //setting up total amount of pages for pagination
+          setTotalPages(Math.ceil(sortedCars?.length / itemsPerPage));
+        }, 1000);
+      }
+    },
+    [loading, sortedCars, setCars, cars]
+  );
 
-        if (!sortedCars?.length) return;
-        //setting up total amount of pages for pagination
-        setTotalPages(Math.ceil(sortedCars?.length / itemsPerPage));
-      }, 1000);
-    }
-  }, [loading, sortedCars, cars, setCars]);
+  const observerFilterUpdates = useCallback(
+    e => {
+      const filteredCarsByHeading = cars?.filter(car =>
+        car.heading.toLowerCase().includes(query?.toLocaleLowerCase())
+      );
 
-  useEffect(() => {
-    //filtering based on Heading
-    const filteredCarsByHeading = cars?.filter(car =>
-      car.heading.toLowerCase().includes(query?.toLocaleLowerCase())
-    );
+      //filtering based on Subheading
+      const filteredCarsBySubheading = cars?.filter(car =>
+        car.subheading.toLowerCase().includes(query?.toLocaleLowerCase())
+      );
 
-    //filtering based on Subheading
-    const filteredCarsBySubheading = cars?.filter(car =>
-      car.subheading.toLowerCase().includes(query?.toLocaleLowerCase())
-    );
+      //combining two filters into one
+      const searchResult = [
+        ...(filteredCarsByHeading ?? []),
+        ...(filteredCarsBySubheading ?? []),
+      ];
+      return searchResult;
+    },
+    [cars, query]
+  );
 
-    //combining two filters into one
-    const searchResult = [
-      ...(filteredCarsByHeading ?? []),
-      ...(filteredCarsBySubheading ?? []),
-    ];
+  const handleFiltering = useCallback(
+    e => {
+      const searchResult = observerFilterUpdates();
 
-    //when no results were found on search, setting state for cars to emtpy array
-    if (!searchResult.length) {
-      setSortedCars(searchResult ?? []);
-      return;
-    }
+      //when no results were found on search, setting state for cars to emtpy array
+      if (!searchResult.length) {
+        setSortedCars(searchResult ?? []);
+        return;
+      }
 
-    //making sure all cards are uniqe after two filters were merged
-    let uniqArray = [];
-    function uniqObjects(data, key) {
-      return (uniqArray = [...new Map(data.map(x => [key(x), x])).values()]);
-    }
-    uniqObjects(searchResult, car => car.id);
-    setSortedCars(uniqArray);
-  }, [query, cars]);
+      //making sure all cards are uniqe after two filters were merged
+      let uniqArray = [];
+      const uniqObjects = (data, key) => {
+        return (uniqArray = [...new Map(data.map(x => [key(x), x])).values()]);
+      };
+      uniqObjects(searchResult, car => car.id);
+      setSortedCars(uniqArray);
+    },
+    [observerFilterUpdates]
+  );
 
-  //scrolling to the TOP of the page when navigating to another page using pagination
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentPage]);
   //setting up current page
-  const handlePageChange = selectedPage => {
-    setCurrentPage(selectedPage.selected);
-  };
+  const handlePageChange = useCallback(
+    selectedPage => {
+      setCurrentPage(selectedPage.selected);
+    },
+    [setCurrentPage]
+  );
 
   // using this toggle to update state of the Modal window based on previous state
-  const toggleModal = () => {
-    setIsShowModal(prevIsShowModal => !prevIsShowModal);
-  };
+  const toggleModal = useCallback(
+    e => {
+      setIsShowModal(prevIsShowModal => !prevIsShowModal);
+    },
+    [setIsShowModal]
+  );
 
   //variables that are used for pagination
   const startIndex = currentPage * itemsPerPage;
@@ -111,24 +126,49 @@ const Home = () => {
   const subset = sortedCars?.slice(startIndex, endIndex);
 
   //setting info that is displayed in Modal and passed as props
-  const onClick = (_, showModalInfo) => {
-    setModalProps(showModalInfo);
-    toggleModal();
-  };
+  const onClick = useCallback(
+    (_, showModalInfo) => {
+      setModalProps(showModalInfo);
+      toggleModal();
+    },
+    [setModalProps, toggleModal]
+  );
 
   //toggle used to display or hide sorting options
-  const sortingToggle = () => {
-    setIsShowSorting(prevIsShowModal => !prevIsShowModal);
-  };
+  const sortingToggle = useCallback(
+    e => {
+      setIsShowSorting(prevIsShowModal => !prevIsShowModal);
+    },
+    [setIsShowSorting]
+  );
 
   //closing sorting options using close button
-  const onCloseSortingBar = value => {
-    setIsShowSorting(value);
-  };
+  const onCloseSortingBar = useCallback(
+    value => {
+      setIsShowSorting(value);
+    },
+    [setIsShowSorting]
+  );
   //opening Sorting options by clicking on SETTINGS icon
-  const onSettingsClick = () => {
-    sortingToggle();
-  };
+  const onSettingsClick = useCallback(
+    e => {
+      sortingToggle();
+    },
+    [sortingToggle]
+  );
+
+  useEffect(() => {
+    handleLoading();
+  }, [handleLoading]);
+
+  useEffect(() => {
+    handleFiltering();
+  }, [handleFiltering]);
+
+  //scrolling to the TOP of the page when navigating to another page using pagination
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   return (
     <Wrapper>
