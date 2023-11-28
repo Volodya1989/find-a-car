@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SharedLayout from '../components/SharedLayout';
 
+//using Lazy Loading treduce loading time
 const Home = lazy(() => import('../Pages/Home'));
 const PageNotFound = lazy(() => import('../Pages/PageNotFound'));
 

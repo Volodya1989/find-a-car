@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Heading from 'components/Card/Heading';
 import Subheading from 'components/Card/Subheading';
 import Price from 'components/Card/Price';
@@ -26,25 +26,22 @@ const Card = ({
   favorites,
 }) => {
   const [isFavorite, setIsFavorite] = useState(favorites);
-
+  //setting up state for cars using localStorage hook
   const [localCars, setLocalCars] = useLocalStorage('cars' ?? []);
 
-  useEffect(() => {
-    setIsFavorite(favorites);
-    // eslint-disable-next-line
-  }, []);
-
+  //setting up favorites state based on the previous
   const onFavoriteChange = () => {
     setIsFavorite(prevIsShowModal => !prevIsShowModal);
 
-    const modifiedEmployees = localCars.map(obj => {
+    //updating modified car based on favorites and adding to the original array of cars
+    const modifiedCar = localCars.map(obj => {
       if (obj.id === id) {
         return { ...obj, favorites: !isFavorite };
       }
       return obj;
     });
 
-    setLocalCars(modifiedEmployees);
+    setLocalCars(modifiedCar);
   };
 
   return (
@@ -67,12 +64,13 @@ const Card = ({
 
       <CardImage
         //Images that were provided, showed error 404 (https://goo.gl/W6XXEx , https://goo.gl/zg4adq ,
-        // https://goo.gl/NbNN0F). So, needed to take something else.
+        // https://goo.gl/NbNN0F). So, used different ones, but with the same logic.
         src={
           showBridge
             ? require('../../images/bridge.jpg')
             : require('../../images/placeholderCar.jpg')
         }
+        //backup image in case we get error during api call
         onError={e =>
           (e.target.src = require('../../images/placeholderCar.jpg'))
         }

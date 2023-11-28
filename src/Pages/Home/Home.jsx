@@ -76,9 +76,9 @@ const Home = () => {
       ...(filteredCarsBySubheading ?? []),
     ];
 
+    //when no results were found on search, setting state for cars to emtpy array
     if (!searchResult.length) {
       setSortedCars(searchResult ?? []);
-
       return;
     }
 
