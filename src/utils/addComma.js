@@ -1,3 +1,4 @@
+//helper method to add comma to the price of the car
 const addComma = num => {
   var str = num.toString().split('.');
   if (str[0].length >= 4) {
