@@ -2,14 +2,7 @@ import Card from 'components/Card/Card';
 import { List } from './CardsList.styled';
 import ReactPaginate from 'react-paginate';
 
-const CardsList = ({
-  cars,
-  onClick,
-  subset,
-  onPageChange,
-  pageCount,
-  forcePage,
-}) => {
+const CardsList = ({ onClick, subset, onPageChange, pageCount, forcePage }) => {
   return (
     <>
       <List>
