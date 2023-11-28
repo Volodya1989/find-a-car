@@ -74,5 +74,4 @@ data looks like this:
   use SASS and a derivation of Bootstrap.
 - Page should use JavaScript to generate core markup, preferably using a
   JavaScript
-- Framework. We currently use ReactJS but feel free to use any that you are
-  familiar with (ie Mustache, Angular, Ember, Vue … )
+- Framework. ReactJS 
