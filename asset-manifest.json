@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/find-a-car/static/css/main.0b761ad5.css",
-    "main.js": "/find-a-car/static/js/main.99d9bc54.js",
-    "static/js/408.36f05f76.chunk.js": "/find-a-car/static/js/408.36f05f76.chunk.js",
+    "main.js": "/find-a-car/static/js/main.5cf36b93.js",
+    "static/js/408.fdbafb90.chunk.js": "/find-a-car/static/js/408.fdbafb90.chunk.js",
     "static/js/865.c1015cf3.chunk.js": "/find-a-car/static/js/865.c1015cf3.chunk.js",
     "static/css/237.fc4d9f0c.chunk.css": "/find-a-car/static/css/237.fc4d9f0c.chunk.css",
     "static/js/237.2cbd8fc8.chunk.js": "/find-a-car/static/js/237.2cbd8fc8.chunk.js",
@@ -10,14 +10,14 @@
     "static/media/bridge.jpg": "/find-a-car/static/media/bridge.b01c7c7dacda943e498b.jpg",
     "index.html": "/find-a-car/index.html",
     "main.0b761ad5.css.map": "/find-a-car/static/css/main.0b761ad5.css.map",
-    "main.99d9bc54.js.map": "/find-a-car/static/js/main.99d9bc54.js.map",
-    "408.36f05f76.chunk.js.map": "/find-a-car/static/js/408.36f05f76.chunk.js.map",
+    "main.5cf36b93.js.map": "/find-a-car/static/js/main.5cf36b93.js.map",
+    "408.fdbafb90.chunk.js.map": "/find-a-car/static/js/408.fdbafb90.chunk.js.map",
     "865.c1015cf3.chunk.js.map": "/find-a-car/static/js/865.c1015cf3.chunk.js.map",
     "237.fc4d9f0c.chunk.css.map": "/find-a-car/static/css/237.fc4d9f0c.chunk.css.map",
     "237.2cbd8fc8.chunk.js.map": "/find-a-car/static/js/237.2cbd8fc8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0b761ad5.css",
-    "static/js/main.99d9bc54.js"
+    "static/js/main.5cf36b93.js"
   ]
 }
