@@ -106,12 +106,17 @@ const SortingRadios = ({
   );
 
   //adding listener if previous and current visibility of sorting options is different
-  useEffect(() => {
-    if (!previousVisibility && isShowSorting)
-      window.addEventListener('keydown', onEscKeyPress);
+  const handleVisibilityOnKeydown = useCallback(
+    e => {
+      if (!previousVisibility && isShowSorting)
+        window.addEventListener('keydown', onEscKeyPress);
+    },
+    [isShowSorting, onEscKeyPress, previousVisibility]
+  );
 
-    // eslint-disable-next-line
-  }, [isShowSorting]);
+  useEffect(() => {
+    handleVisibilityOnKeydown();
+  }, [handleVisibilityOnKeydown]);
 
   return (
     <Wrapper visible={isShowSorting.toString() === 'true' ? 'true' : 'false'}>
