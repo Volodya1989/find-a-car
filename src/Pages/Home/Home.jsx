@@ -78,6 +78,7 @@ const Home = () => {
         ...(filteredCarsByHeading ?? []),
         ...(filteredCarsBySubheading ?? []),
       ];
+      setCurrentPage(0);
       return searchResult;
     },
     [cars, query]
