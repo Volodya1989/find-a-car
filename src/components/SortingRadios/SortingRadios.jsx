@@ -8,10 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
-import {
-  Wrapper,
-  InnerWrapper,
-} from './SortingRadios.styled';
+import { Wrapper, InnerWrapper } from './SortingRadios.styled';
 import Tooltip from '@mui/material/Tooltip';
 
 import { toast } from 'react-toastify';
@@ -32,28 +29,37 @@ const SortingRadios = ({
   const [helperText, setHelperText] = useState('');
   const previousVisibility = usePrevious(isShowSorting);
 
+  //saving ref valus for the soring options between renders
   const innerWrapperRef = useRef();
 
+  //closing sorging options on ESCAPE
   const onEscKeyPress = useCallback(
     e => {
       if (e.key !== 'Escape') return;
 
       onCloseSortingBar(false);
+
+      //removing listener to avoid creation of multiple listeners
       window.removeEventListener('keydown', onEscKeyPress);
     },
     [onCloseSortingBar]
   );
 
+  //saving state on changes in SORT options
   const handleRadioChange = event => {
     setValue(event.target.value);
     setHelperText(' ');
     setError(false);
   };
-  const toastSuccess = (message, type) => {
+
+  //common method success notifications
+  const toastSuccess = (message, _) => {
     toast.success(message, {
       className: 'toast-message',
     });
   };
+
+  //methong to set state of the helper text to remind user what option is currently used for sorting
   const handleSubmit = event => {
     event.preventDefault();
     onSortingCars(value, sortedCars, setSortedCars);
@@ -81,6 +87,7 @@ const SortingRadios = ({
     setValue(event.target.value);
   };
 
+  //method to RESET sorting options
   const handleReset = event => {
     event.preventDefault();
     if (!helperText) return;
@@ -92,11 +99,13 @@ const SortingRadios = ({
     toastSuccess('Sorting options were reseted.');
   };
 
+  //closing sorting options based on the click outside of the sorting box
   useOnClickOutside(
     innerWrapperRef,
     () => isShowSorting && setTimeout(() => onCloseSortingBar(false), 201)
   );
 
+  //adding listener if previous and current visibility of sorting options is different
   useEffect(() => {
     if (!previousVisibility && isShowSorting)
       window.addEventListener('keydown', onEscKeyPress);

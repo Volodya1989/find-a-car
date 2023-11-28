@@ -1,3 +1,4 @@
+//helper method to sort cars based on choosen radio value
 const onSortingCars = (value, cars, setSortedCars) => {
   if (!cars) return;
 
