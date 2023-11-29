@@ -141,12 +141,9 @@ export const IconWrapper = styled.div`
   cursor: pointer;
   &:hover {
     background: linear-gradient(
-      to right top,
-      #0dcbec,
-      #00aefd,
-      #008dff,
-      #0063ff,
-      #2612eb
+      90deg,
+      rgba(238, 23, 76, 1) 3%,
+      rgba(120, 3, 91, 0.8729866946778712) 100%
     );
   }
 `;
